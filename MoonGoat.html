@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>MOON GOAT!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <style>
     body {
       margin: 0;
@@ -43,24 +44,32 @@
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
+      max-height: 90vh;         /* Prevent menu from growing too tall */
+      overflow-y: auto;         /* Allow scrolling if content is too tall */
+      padding: 10px;
+      box-sizing: border-box;
+      width: 240px;             /* Fixed width for consistent button alignment */
     }
     #menu h1 {
       font-size: 48px;
       margin-bottom: 40px;
       letter-spacing: 4px;
+      color: white;             /* Ensure title is visible */
     }
     .level-btn {
       display: block;
-      margin: 15px auto;
-      padding: 15px 40px;
-      font-size: 24px;
+      margin: 12px auto;
+      padding: 12px 30px;
+      font-size: 20px;          /* Slightly smaller font */
       border: 2px solid white;
       border-radius: 10px;
       background: rgba(0,0,0,0.6);
+      color: white;
       cursor: pointer;
-      width: 200px;
+      width: 100%;              /* Full width inside menu */
+      max-width: 200px;         /* Limit max width */
       user-select: none;
-      transition: background 0.3s;
+      transition: background 0.3s, color 0.3s;
     }
     .level-btn:hover {
       background: white;
